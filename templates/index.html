@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chatbot Studio</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="app-shell">
+    <aside class="panel left-panel">
+      <h1>AI Chatbot Studio</h1>
+      <p class="tagline">OpenRouter + MySQL with full CRUD</p>
+      <form id="createChatForm" class="card">
+        <h2>New Chat</h2>
+        <input id="userName" type="text" placeholder="User name" required />
+        <input id="topic" type="text" placeholder="Topic (optional)" />
+        <button type="submit">Create Chat</button>
+      </form>
+      <div class="card">
+        <div class="card-head">
+          <h2>Chats</h2>
+          <button id="refreshChats" class="ghost">Refresh</button>
+        </div>
+        <ul id="chatList" class="chat-list"></ul>
+      </div>
+    </aside>
+
+    <section class="panel right-panel">
+      <div class="card chat-window">
+        <div class="chat-header">
+          <h2 id="activeChatTitle">Select a chat</h2>
+          <div class="actions">
+            <button id="renameChat" class="ghost" disabled>Rename Topic</button>
+            <button id="deleteChat" class="danger" disabled>Delete Chat</button>
+          </div>
+        </div>
+        <div id="messages" class="messages"></div>
+        <form id="messageForm" class="composer">
+          <input id="messageInput" type="text" placeholder="Type a message..." required disabled />
+          <button id="sendBtn" type="submit" disabled>Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
